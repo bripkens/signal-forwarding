@@ -1,0 +1,20 @@
+#!/usr/bin/env node
+
+console.log('Program PID is: %s', process.pid);
+
+process.on('SIGINT', () => {
+  console.log('Got SIGINT.');
+});
+
+process.on('SIGTERM', () => {
+  console.log('Got SIGTERM.');
+});
+
+process.on('exit', () => {
+  console.log('Exiting program.');
+});
+
+setTimeout(() => {
+  console.log('Timeout occured – exiting');
+  process.exit(0);
+}, 60 * 1000);
