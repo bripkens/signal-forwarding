@@ -1,0 +1,14 @@
+#!/bin/bash
+
+set -eo pipefail
+
+echo "Program PID is: $$"
+
+trap "{ echo Program: Got SIGINT.; }" SIGINT
+trap "{ echo Program: Got SIGTERM.; }" SIGTERM
+trap "{ echo Program: Exiting. ; exit 0; }" EXIT
+
+while :
+do
+  sleep 1
+done

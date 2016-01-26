@@ -1,0 +1,21 @@
+#!/usr/bin/env node
+
+console.log('Program PID is: %s', process.pid);
+
+process.on('SIGINT', () => {
+  console.log('Program: Got SIGINT.');
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('Program: Got SIGTERM.');
+  process.exit(0);
+});
+
+process.on('exit', () => {
+  console.log('Program: Exiting.');
+});
+
+setInterval(() => {
+  // keep the program running…
+}, 1000);
