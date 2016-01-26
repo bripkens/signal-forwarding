@@ -16,7 +16,6 @@ Program: Exiting.
 ```
 
 ```
-docker-machine ssh default
 docker stop signals
 ```
 
@@ -28,6 +27,5 @@ Program PID is: 8
 ```
 
 ```
-docker-machine ssh default
 docker stop signals
 ```
